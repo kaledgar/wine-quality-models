@@ -33,6 +33,8 @@ soon :)
 - P. Cortez, A. Cerdeira, F. Almeida, T. Matos, and J. Reis. "Modeling wine preferences by data mining from physicochemical properties." Elsevier, 47(4):547-553, 2009. ISSN: 0167-9236.
 - Dataset Source: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/wine+quality)
 
+## Details
+
 Please refer to the code files for more detailed implementation and analysis.
 
 ```ssh
