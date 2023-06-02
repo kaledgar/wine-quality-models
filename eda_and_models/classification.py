@@ -69,19 +69,20 @@ class Pipeline:
             # precision = tp/(tp + fp), where tp, fp - true positives, false positives
             # recall = tp/(tp + fn), where fn - false positives
 
-            score = model.score(self.x_test, self.y_test)
-            score1 = accuracy_score(self.y_test, y_predicted)
+            #score = model.score(self.x_test, self.y_test)
+            score = accuracy_score(self.y_test, y_predicted)
             precision = precision_score(self.y_test, y_predicted)
             recall = recall_score(self.y_test, y_predicted)
             report = classification_report(self.y_test, y_predicted)
             new_row = pd.DataFrame({
                 'model': [str(model)],
-                'f1-score': [score1.round(2)],
-                'precision': [precision.round(2)],
-                'recall': [recall.round(2)]
+                'f1-score': [score.round(3)],
+                'precision': [precision.round(3)],
+                'recall': [recall.round(3)]
             })
+            print(model)
+            print(report)
             self.evaluation_statistics = pd.concat([self.evaluation_statistics, new_row], ignore_index=True)
-            #print(report)
         return self.evaluation_statistics
 
 rw = Pipeline(df_red)
